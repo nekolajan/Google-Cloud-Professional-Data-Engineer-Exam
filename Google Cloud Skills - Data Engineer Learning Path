@@ -1,0 +1,18 @@
+A tour of Google Cloud Hands-on Labs
+
+Google project organizes all your Google Cloud resources.
+A project consists of a set of users; a set of APIs; and billing, authentication, and monitoring settings for those APIs
+
+https://cloud.google.com/storage/docs/projects
+
+Roles 
+Role Name	     Permissions
+roles/viewer.	 Permissions for read-only actions that do not affect state, such as viewing (but not modifying) existing resources or data.
+roles/editor.	 All viewer permissions, plus permissions for actions that modify state, such as changing existing resources.
+roles/owner.	 All editor permissions and permissions for the following actions: manage roles and permissions for a project and all resources within the project; set up billing for a project.
+
+https://cloud.google.com/iam/docs/understanding-roles/#primitive\_roles
+
+
+APIs and services
+https://cloud.google.com/apis/design/
