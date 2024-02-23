@@ -7,6 +7,7 @@ The exam comprises 50 questions, which consist of both single-choice and multipl
 Study Roadmap
 
 Materials and Links
+You can find the exam guide on the certification page: https://cloud.google.com/learn/certification/guides/data-engineer 
 
 Tips and tricks
 Try to respond to all of the questions. There is no penalty for incorrect answers.
