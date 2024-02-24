@@ -1,0 +1,393 @@
+Designing Data Processing Systems
+
+
+Diagnostic questions
+Your score: 100% Passing score: 75%
+Congratulations! You passed this assessment.
+check
+1.
+
+Laws in the region where you operate require that files related to all orders made each day are stored immutably for 365 days. The solution that you recommend has to be cost-effective. What should you do?
+
+Store the data in a Cloud Storage bucket, and enable object versioning and delete any version older than 365 days.
+
+Store the data in a Cloud Storage bucket, enable object versioning, and delete any version greater than 365.
+check
+Store the data in a Cloud Storage bucket, and specify a retention period.
+
+Store the data in a Cloud Storage bucket, and set a lifecycle policy to delete the file after 365 days.
+Correct. Object retention is a built-in option that lets you configure how long the files should remain without allowing any changes.
+check
+2.
+
+Business analysts in your team need to run analysis on data that was loaded into BigQuery. You need to follow recommended practices and grant permissions. What role should you grant the business analysts?
+
+bigquery.resourceViewer and bigquery.dataViewer
+
+storage.objectViewer and bigquery.user
+
+bigquery.dataOwner
+check
+bigquery.user and bigquery.dataViewer
+Correct. The analysts need to view the data and run queries on it, which are granted by these predefined roles.
+check
+3.
+
+You have a Dataflow pipeline that runs data processing jobs. You need to identify the parts of the pipeline code that consume the most resources. What should you do?
+
+Use Cloud Monitoring
+check
+Use Cloud Profiler
+
+Use Cloud Audit Logs
+
+Use Cloud Logging
+Correct. Cloud Profiler shows you a flame graph of statistics of the running jobs, which can be used to evaluate resource usage.
+check
+4.
+
+You are migrating on-premises data to a data warehouse on Google Cloud. This data will be made available to business analysts. Local regulations require that customer information including credit card numbers, phone numbers, and email IDs be captured, but not used in analysis. You need to use a reliable, recommended solution to redact the sensitive data. What should you do?
+check
+Use the Cloud Data Loss Prevention (DLP) API to identify and redact data that matches infoTypes like credit card numbers, phone numbers, and email IDs.
+
+Use the Cloud Data Loss Prevention (DLP) API to perform date shifting of any entries with credit card numbers, phone numbers, and email IDs.
+
+Create a regular expression to identify and delete patterns that resemble credit card numbers, phone numbers, and email IDs.
+
+Delete all columns with a title similar to "credit card," "phone," and "email."
+Correct. Cloud Data Loss Prevention helps you discover, classify, and protect your most sensitive data. There are predefined infoTypes that you can employ to identify and redact specific data types.
+check
+5.
+
+Cymbal Retail has a team of business analysts who need to fix and enhance a set of large input data files. For example, duplicates need to be removed, erroneous rows should be deleted, and missing data should be added. These steps need to be performed on all the present set of files and any files received in the future in a repeatable, automated process. The business analysts are not adept at programming. What should they do?
+
+Load the data into Google Sheets, explore the data, and fix the data as needed.
+check
+Load the data into Dataprep, explore the data, and edit the transformations as needed.
+
+Create a Dataproc job to perform the data fixes you need.
+
+Create a Dataflow pipeline with the data fixes you need.
+Correct. Dataprep lets you load large amounts of data and visually fix it, which would be very convenient for those who are unfamiliar with programming. The data wrangling steps can be captured as a series of transformations that can be reapplied later to future data.
+check
+6.
+
+Cymbal Retail has acquired another company in Europe. Data access permissions and policies in this new region differ from those in Cymbal Retail’s headquarters, which is in North America. You need to define a consistent set of policies for projects in each region that follow recommended practices. What should you do?
+
+Implement a flat hierarchy, and assign policies to each project according to its region.
+
+Implement policies at the resource level that comply with regional laws.
+
+Create a new organization for all projects in Europe and assign policies in each organization that comply with regional laws.
+check
+Create top level folders for each region, and assign policies at the folder level.
+Correct. Folders are used to group related projects within an organization. They can also be used to apply consistent policies for projects within the folder.
+check
+7.
+
+Cymbal Retail is migrating its private data centers to Google Cloud. Over many years, hundreds of terabytes of data were accumulated. You currently have a 100 Mbps line and you need to transfer this data reliably before commencing operations on Google Cloud in 45 days. What should you do?
+
+Upload the data to Cloud Storage by using gsutil.
+
+Store the data in an HTTPS endpoint, and configure Storage Transfer Service to copy the data to Cloud Storage.
+check
+Order a transfer appliance, export the data to it, and ship it to Google.
+
+Zip and upload the data to Cloud Storage buckets by using the Google Cloud console.
+Correct. For large amounts of data that need to be transferred within a month, a transfer appliance is the right choice.
+check
+8.
+
+You are managing the data for Cymbal Retail, which consists of multiple teams including retail, sales, marketing, and legal. These teams are consuming data from multiple producers including point of sales systems, industry data, orders, and more. Currently, teams that consume data have to repeatedly ask the teams that produce it to verify the most up-to-date data and to clarify other questions about the data, such as source and ownership. This process is unreliable and time-consuming and often leads to repeated escalations. You need to implement a centralized solution that gains a unified view of the organization's data and improves searchability. What should you do?
+
+Implement a data lake with Cloud Storage, and create buckets for each team such asretail, sales, marketing.
+
+Implement Looker dashboards that provide views of the data that meet each teams’ requirements.
+
+Implement a data warehouse by using BigQuery, and create datasets for each team such as retail, sales, marketing.
+check
+Implement a data mesh with Dataplex and have producers tag data when created.
+Correct. Dataplex is a data mesh that also includes data cataloging capability with Data Catalog. Consumers of data can search and discover information readily without having to wait for data producers to respond, which reduces the bottlenecks on data analysis.
+check
+9.
+
+Your data and applications reside in multiple geographies on Google Cloud. Some regional laws require you to hold your own keys outside of the cloud provider environment, whereas other laws are less restrictive and allow storing keys with the same provider who stores the data. The management of these keys has increased in complexity, and you need a solution that can centrally manage all your keys. What should you do?
+
+Store keys in Cloud Key Management Service (KMS), and reduce the number of days forautomatic key rotation.
+
+Store your keys in Cloud Hardware Security Module (HSM), and retrieve keys from it when required.
+
+Enable confidential computing for all your virtual machines.
+check
+Store your keys on a supported external key management partner, and use Cloud External Key Manager (EKM) to get keys when required.
+Correct. With Cloud EKM, you manage access to your externally managed keys that reside outside of Google Cloud. Because you need a single solution that also has to store keys externally, this would be the appropriate option.
+check
+10.
+
+You are using Dataproc to process a large number of CSV files. The storage option you choose needs to be flexible to serve many worker nodes in multiple clusters. These worker nodes will read the data and also write to it for intermediate storage between processing jobs. What is the recommended storage option on Google Cloud?
+
+Zonal persistent disks
+check
+Cloud Storage
+
+Cloud SQL
+
+Local SSD
+Correct. Cloud Storage is the recommended, centralized storage option for Dataproc. It offers many benefits such as high data availability, no storage management, quick startup, and consistent Identity and Access Management (IAM).
+
+1.1 Designing for security and compliance
+
+Links:
+https://cloud.google.com/architecture/help-secure-the-pipeline-from-your-data-lake-toyour-data-warehouse#business_analyst
+https://cloud.google.com/iam/docs/understanding-roles#bigquery-roles
+
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Building a Data Lake
+● Building a Data Warehouse
+Smart Analytics, Machine Learning, and AI on Google Cloud
+● Prebuilt ML Model APIs for Unstructured Data
+Serverless Data Processing with Dataflow: Foundations
+● IAM, Quotas, and Permissions
+● Security
+Skill Badges:
+Create and Manage Cloud Resources
+Perform Foundational Data, ML, and AI Tasks in Google Cloud
+
+Summary: 
+The principle of least privilege says that no more permissions ought to be granted 
+than is required to do the job. So it's important to understand the scope of the job role 
+and how it maps to roles within Identity and Access Management (IAM). Ideally, 
+choose predefined roles, but if they do not provide the required set of permissions, 
+create a custom role.
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/resource-manager/docs/creating-managing-folders
+https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Building a Data Lake
+● Building a Data Warehouse
+BigQuery Fundamentals for Redshift Professionals
+● BigQuery and Google Cloud IAM
+Summary: 
+Google Cloud's resource hierarchy, access control, and organizational policies let you 
+configure Identity and Access Management (IAM) settings at a higher level in the 
+hierarchy that will be inherited by child resources. Grouping resources in folders also 
+lets you have consistent policies for all projects and resources within it.
+
+----------------------------------------------------------------------------------------------------------
+
+
+Links:
+https://cloud.google.com/dlp 
+https://cloud.google.com/dlp/docs/infotypes-reference
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Introduction to Data Engineering
+BigQuery Fundamentals for Redshift Professionals
+● BigQuery and Google Cloud IAM
+Summary: 
+Regulations often require you to capture different kinds of data, but there are other 
+regulations that have strict requirements on how you handle and use the data. 
+Frequently, the sharing and usage of personally identifiable information (PII) is not 
+allowed. Cloud DLP has over 150 infoTypes that can detect various kinds of data. 
+Based on your business needs, you can then take different kinds of action, such as 
+redacting or masking sensitive data, to comply with regulations
+
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/dlp 
+https://cloud.google.com/dlp/docs/infotypes-reference
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Introduction to Data Engineering
+BigQuery Fundamentals for Redshift Professionals
+● BigQuery and Google Cloud IAM
+Summary: 
+Regulations often require you to capture different kinds of data, but there are other 
+regulations that have strict requirements on how you handle and use the data. 
+Frequently, the sharing and usage of personally identifiable information (PII) is not 
+allowed. Cloud DLP has over 150 infoTypes that can detect various kinds of data. 
+Based on your business needs, you can then take different kinds of action, such as 
+redacting or masking sensitive data, to comply with regulations
+
+----------------------------------------------------------------------------------------------------------
+
+
+Additional Links:
+https://cloud.google.com/architecture/help-secure-the-pipeline-from-your-data-la
+ke-to-your-data-warehouse#business_analyst
+https://cloud.google.com/iam/docs/understanding-roles#bigquery-roles
+https://cloud.google.com/resource-manager/docs/creating-managing-folders
+https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierar
+chy
+https://cloud.google.com/dlp
+https://cloud.google.com/dlp/docs/infotypes-reference
+https://cloud.google.com/kms/docs/ekm
+https://cloud.google.com/blog/products/identity-security/hold-your-own-key-with
+-google-cloud-external-key-manager
+https://cloud.google.com/blog/products/identity-security/whats-new-with-cloud-e
+km
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+1.2 Designing for reliability and fidelity
+
+Links:
+https://docs.trifacta.com/display/HOME/Clean+and+Enhance+Your+Data
+https://docs.trifacta.com/display/HOME/Introduction+to+Data+Wrangling
+More information:
+Courses:
+Building Batch Data Pipelines on Google Cloud
+● Introduction to Building Batch Data Pipelines
+Serverless Data Processing with Dataflow: Develop Pipelines
+● Best Practices 
+Serverless Data Processing with Dataflow: Operations
+● Troubleshooting and Debug
+Skill Badges: 
+Perform Foundational Data, ML, and AI Tasks in Google Cloud
+Engineer Data with Google Cloud
+Summary: 
+Dataprep provides a visual interface to wrangle data. The data can be visualized as a 
+table with rows and columns. The user can then make edits on the data, which are 
+then captured and rerun on other datasets.
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/dataflow/docs/guides/profiling-a-pipeline
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Building a Data Warehouse
+Building Batch Data Pipelines on Google Cloud
+● Manage Data Pipelines with Cloud Data Fusion and Cloud Composer
+Building Resilient Streaming Analytics Systems on Google Cloud
+● Serverless Messaging with Pub/Sub
+Serverless Data Processing with Dataflow: Operations
+● Monitoring
+● Logging and Error Reporting
+● Troubleshooting and Debug
+● Testing and CI/CD
+● Reliability
+Summary: 
+Google Cloud has multiple tools to monitor and evaluate resources and running 
+workloads. They are strongly integrated into many products. Enable the tools and 
+review the data to identify bottlenecks or errors in your data pipelines.
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://docs.trifacta.com/display/HOME/Clean+and+Enhance+Your+Data
+https://docs.trifacta.com/display/HOME/Introduction+to+Data+Wrangling
+https://cloud.google.com/dataflow/docs/guides/profiling-a-pipeline
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+1.3 Designing for flexibility and portability
+
+Links:
+https://cloud.google.com/blog/topics/developers-practitioners/dataproc-best-pra
+ctices-guide
+https://cloud.google.com/blog/products/storage-data-transfer/hdfs-vs-cloud-stor
+age-pros-cons-and-migration-tips
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Building a Data Lake
+Serverless Data Processing with Dataflow: Foundations
+● Beam Portability
+Summary: 
+When designing data pipelines, a Professional Data Engineer (PDE) should be able 
+to design for portability of data and applications. One aspect of this involves choosing 
+an appropriate storage location for your data.
+Cloud Storage is a Hadoop Compatible File System (HCFS) that supports Hadoop 
+and Spark jobs with minimal changes. It is tightly integrated into Google Cloud and 
+supports multiple features such as Identity and Access Management (IAM), 
+redundancy, high availability, and durability, which makes this Google product easy to 
+work with
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/dataplex/docs/introduction
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Introduction to Data Engineering
+Building Batch Data Pipelines on Google Cloud
+● Introduction to Building Batch Data Pipelines
+Summary: 
+As data volumes increase, it becomes difficult to monitor the data. Also, its lineage, 
+access controls, security, and other metadata can overwhelm data producers and 
+consumers. A data mesh like Dataplex can maintain metadata in a Data Catalog; 
+some of the data can be auto-tagged and some other can be manually tagged, which 
+provides rich information that makes the data readily consumable across the 
+organization
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/blog/topics/developers-practitioners/dataproc-best-practicesguide
+https://cloud.google.com/blog/products/storage-data-transfer/hdfs-vs-cloud-storage-pr
+os-cons-and-migration-tips
+https://cloud.google.com/dataplex/docs/introduction
+
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+1.4 Designing data migrations
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/storage/docs/bucket-lock
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Building a Data Lake
+● Building a Data Warehouse
+BigQuery Fundamentals for Redshift Professionals
+● BigQuery and Google Cloud IAM
+Summary: 
+Cloud Storage's built-in capabilities for lifecycle management are simple to 
+configure and ease such important tasks without the need to build, operate, or 
+maintain any custom solutions
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/architecture/migration-to-google-cloud-transferring-you
+r-large-datasets#transfer-options
+More information:
+Courses:
+Modernizing Data Lakes and Data Warehouses on Google Cloud
+● Building a Data Warehouse
+BigQuery Fundamentals for Redshift Professionals
+● SQL in BigQuery
+Summary: 
+For data transfers, you need to consider network bandwidth, reliability of the 
+network, and the timeline you need to meet. When the available network 
+bandwidth is low, transfer time will be extended, which might not be viable for 
+the business. In such circumstances, bringing the data into Google Cloud with a 
+transfer appliance is more convenient
+
+----------------------------------------------------------------------------------------------------------
+
+Links:
+https://cloud.google.com/storage/docs/bucket-lock
+https://cloud.google.com/architecture/migration-to-google-cloud-transferring-you
+r-large-datasets#transfer-options
+
+
