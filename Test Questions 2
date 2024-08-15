@@ -1,79 +1,159 @@
-Taken from https://www.examtopics.com/exams/google/associate-cloud-engineer/view/
+https://www.examtopics.com/exams/google/professional-data-engineer/view/
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 1
-Every employee of your company has a Google account. Your operational team needs to manage a large number of instances on Compute Engine. 
-Each member of this team needs only administrative access to the servers. 
-Your security team wants to ensure that the deployment of credentials is operationally efficient and must be able to determine who accessed a given instance. 
-What should you do?
-A. Generate a new SSH key pair. Give the private key to each member of your team. Configure the public key in the metadata of each instance.
-B. Ask each member of the team to generate a new SSH key pair and to send you their public key. Use a configuration management tool to deploy those keys on each instance.
-C. Ask each member of the team to generate a new SSH key pair and to add the public key to their Google account. Grant the ג€compute.osAdminLoginג€ role to the Google group corresponding to this team.
-D. Generate a new SSH key pair. Give the private key to each member of your team. Configure the public key as a project-wide public SSH key in your Cloud Platform project and allow project-wide public SSH keys on each instance.
+Your company built a TensorFlow neutral-network model with a large number of neurons and layers. 
+The model fits well for the training data. 
+However, when tested against new data, it performs poorly. What method can you employ to address this?
+A. Threading
+B. Serialization
+C. Dropout Methods
+D. Dimensionality Reduction
 
-Correct Answer: D
+Correct Answer: C
 Reference:
-https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys
+https://medium.com/mlreview/a-simple-deep-learning-model-for-stock-price-prediction-using-tensorflow-30505541d877
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 2 
-You need to create a custom VPC with a single subnet. The subnet's range must be as large as possible. 
-Which range should you use?
-A. 0.0.0.0/0
-B. 10.0.0.0/8
-C. 172.16.0.0/12
-D. 192.168.0.0/16
-
+You are building a model to make clothing recommendations. 
+You know a user's fashion preference is likely to change over time, so you build a data pipeline to stream new data back to the model as it becomes available. 
+How should you use this data to train the model?
+A. Continuously retrain the model on just the new data.
+B. Continuously retrain the model on a combination of existing data and the new data.
+C. Train on the existing data while using the new data as your test set.
+D. Train on the new data while using the existing data as your test set.
 Correct Answer: B
-In Google Cloud Platform (GCP), when creating a VPC network, you should use the IP ranges that are reserved for private networks as defined by the RFC 1918. Here are the private IP address ranges defined by RFC 1918:
+Reference:
+?
 
-10.0.0.0 to 10.255.255.255 (10.0.0.0/8)
-172.16.0.0 to 172.31.255.255 (172.16.0.0/12)
-192.168.0.0 to 192.168.255.255 (192.168.0.0/16)
-From the provided options:
-
-A. 0.0.0.0/0: This is not a private IP address range. It represents all possible IP addresses.
-
-B. 10.0.0.0/8: This is a private IP range that covers all IP addresses from 10.0.0.0 to 10.255.255.255. It's the largest range among the options.
-
-C. 172.16.0.0/12: This is a private IP range, but it's smaller than 10.0.0.0/8.
-
-D. 192.168.0.0/16: This is also a private IP range, but it's smaller than both B and C.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 3
-You want to select and configure a cost-effective solution for relational data on Google Cloud Platform. You are working with a small set of operational data in one geographic location. You need to support point-in-time recovery. What should you do?
-A. Select Cloud SQL (MySQL). Verify that the enable binary logging option is selected.
-B. Select Cloud SQL (MySQL). Select the create failover replicas option.
-C. Select Cloud Spanner. Set up your instance with 2 nodes.
-D. Select Cloud Spanner. Set up your instance as multi-regional.
-Correct Answer: A
+You designed a database for patient records as a pilot project to cover a few hundred patients in three clinics.
+Your design used a single database table to represent all patients and their visits, and you used self-joins to generate reports. 
+The server resource utilization was at 50%. Since then, the scope of the project has expanded. 
+The database must now store 100 times more patient records. 
+You can no longer run the reports, because they either take too long or they encounter errors with insufficient compute resources. 
+How should you adjust the database design?
+A. Add capacity (memory and disk space) to the database server by the order of 200.
+B. Shard the tables into smaller ones based on date ranges, and only generate reports with prespecified date ranges.
+C. Normalize the master patient-record table into the patient table and the visits table, and create other necessary tables to avoid self-join.
+D. Partition the table into smaller tables, with one for each clinic. Run queries against the smaller table pairs, and use unions for consolidated reports.
+Correct Answer: C
 Reference:
-https://cloud.google.com/sql/docs/mysql/backup-recovery/restore
+https://cloud.google.com/bigquery/docs/best-practices-performance-patterns
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 4
-You want to configure autohealing for network load balancing for a group of Compute Engine instances that run in multiple zones, using the fewest possible steps.
-You need to configure re-creation of VMs if they are unresponsive after 3 attempts of 10 seconds each. What should you do?
-A. Create an HTTP load balancer with a backend configuration that references an existing instance group. Set the health check to healthy (HTTP)
-B. Create an HTTP load balancer with a backend configuration that references an existing instance group. Define a balancing mode and set the maximum RPS to 10.
-C. Create a managed instance group. Set the Autohealing health check to healthy (HTTP)
-D. Create a managed instance group. Verify that the autoscaling setting is on.
+You create an important report for your large team in Google Data Studio 360. 
+The report uses Google BigQuery as its data source. You notice that visualizations are not showing data that is less than 1 hour old. 
+What should you do?
+A. Disable caching by editing the report settings.
+B. Disable caching in BigQuery by editing table details.
+C. Refresh your browser tab showing the visualizations.
+D. Clear your browser history for the past hour then reload the tab showing the virtualizations.
 
-Correct Answer: C
-Reference : https://cloud.google.com/compute/docs/tutorials/high-availability-autohealing
+Correct Answer: A
+Reference:
+https://support.google.com/datastudio/answer/7020039?hl=en
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Question 5
-You are using multiple configurations for gcloud. You want to review the configured Kubernetes Engine cluster of an inactive configuration using the fewest possible steps. What should you do?
-A. Use gcloud config configurations describe to review the output.
-B. Use gcloud config configurations activate and gcloud config list to review the output.
-C. Use kubectl config get-contexts to review the output.
-D. Use kubectl config use-context and kubectl config view to review the output.
+An external customer provides you with a daily dump of data from their database. The data flows into Google Cloud Storage GCS as comma-separated values
+(CSV) files. You want to analyze this data in Google BigQuery, but the data could have rows that are formatted incorrectly or corrupted. 
+How should you build this pipeline?
+A. Use federated data sources, and check data in the SQL query.
+B. Enable BigQuery monitoring in Google Stackdriver and create an alert.
+C. Import the data into BigQuery using the gcloud CLI and set max_bad_records to 0.
+D. Run a Google Cloud Dataflow batch pipeline to import the data into BigQuery, and push errors to another dead-letter table for analysis.
 
 Correct Answer: D
 Reference:
-https://medium.com/google-cloud/kubernetes-engine-kubectl-config-b6270d2b656c
+https://cloud.google.com/architecture/building-production-ready-data-pipelines-using-dataflow-developing-and-testing#use_dead_letter_queues
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 6
+Your weather app queries a database every 15 minutes to get the current temperature. 
+The frontend is powered by Google App Engine and server millions of users. 
+How should you design the frontend to respond to a database failure?
+A. Issue a command to restart the database servers.
+B. Retry the query with exponential backoff, up to a cap of 15 minutes.
+C. Retry the query every second until it comes back online to minimize staleness of data.
+D. Reduce the query frequency to once every hour until the database comes back online.
+
+Correct Answer: B
+Reference:
+https://cloud.google.com/sql/docs/mysql/manage-connections
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 7
+You are creating a model to predict housing prices. 
+Due to budget constraints, you must run it on a single resource-constrained virtual machine. 
+Which learning algorithm should you use?
+A. Linear regression
+B. Logistic classification
+C. Recurrent neural network
+D. Feedforward neural network
+
+Correct Answer: A
+Reference:
+?
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 8
+You are building new real-time data warehouse for your company and will use Google BigQuery streaming inserts. 
+There is no guarantee that data will only be sent in once but you do have a unique ID for each row of data and an event timestamp. 
+You want to ensure that duplicates are not included while interactively querying data. 
+Which query type should you use?
+A. Include ORDER BY DESK on timestamp column and LIMIT to 1.
+B. Use GROUP BY on the unique ID column and timestamp column and SUM on the values.
+C. Use the LAG window function with PARTITION by unique ID along with WHERE LAG IS NOT NULL.
+D. Use the ROW_NUMBER window function with PARTITION by unique ID along with WHERE row equals 1.
+
+Correct Answer: D
+Reference:
+?
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 9
+Your company is using WILDCARD tables to query data across multiple tables with similar names. 
+The SQL statement is currently failing with the following error:
+#syntax error: Expected end of statement but got "-" as 411
+select age from bigquery-public-data.noaa_gsod.gsod where age != 91 and TABLE_SUFFIX = '1929' order by age desc 
+
+Which table name will make the SQL statement work correctly?
+A. 'bigquery-public-data.noaa_gsod.gsod'
+B. bigquery-public-data.noaa_gsod.gsod*
+C. 'bigquery-public-data.noaa_gsod.gsod'*
+D. 'bigquery-public-data.noaa_gsod.gsod*`
+Correct Answer: D
+Reference: https://cloud.google.com/bigquery/docs/querying-wildcard-tables
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Question 10
+Your company is in a highly regulated industry. 
+One of your requirements is to ensure individual users have access only to the minimum amount of information required to do their jobs. 
+You want to enforce this requirement with Google BigQuery. 
+Which three approaches can you take? (Choose three.)
+A. Disable writes to certain tables.
+B. Restrict access to tables by role.
+C. Ensure that the data is encrypted at all times.
+D. Restrict BigQuery API access to approved users.
+E. Segregate data across multiple tables or databases.
+F. Use Google Stackdriver Audit Logging to determine policy violations.
+Correct Answer: B, D, F
+
+correct option -> B. Restrict access to tables by role.
+Reference: https://cloud.google.com/bigquery/docs/table-access-controls-intro
+
+correct option -> D. Restrict BigQuery API access to approved users.
+***Only approved users will have access which means other users will have minimum amount of information required to do their job.***
+Reference: https://cloud.google.com/bigquery/docs/access-control
+
+correct option -> F. Use Google Stackdriver Audit Logging to determine policy violations.
+Reference: https://cloud.google.com/bigquery/docs/table-access-controls-intro#logging
+
+A. Disable writes to certain tables. ---> Read is still available(not minimal access)
+C. Ensure that the data is encrypted at all times. ---> Data is encrypted by default.
+E. Segregate data across multiple tables or databases. ---> Normalization is of no help here.
