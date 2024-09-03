@@ -1,4 +1,5 @@
-
+Google Cloud Developer's Cheat Sheet
+https://googlecloudcheatsheet.withgoogle.com/
 
 Cloud Storage
 
@@ -14,3 +15,19 @@ It is records based storage. (Meaning the entire record must be open on disk).
 It's optimized to be db for transactions or writes.
 
 Pub/Sub
+
+
+BI Engine is a fast, in-memory analysis service that is built directly into BigQuery.
+
+
+Cloud Monitoring - tracks spending of all the different resources and contains actual query job information to see granular level details about which queries were executed and by who.
+
+Cloud Data Catalogue - makes all the metadata about your datasets available to search for your users
+
+Data loss prevention API
+
+Cloud Composer (Airflow)
+
+
+
+ 
