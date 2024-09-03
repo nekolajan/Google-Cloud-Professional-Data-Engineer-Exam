@@ -2,12 +2,15 @@
 
 Cloud Storage
 
-BigQuery
+BigQuery - column based storage. It's optimized to be db for reads - > reporting.
+
 
 Dataproc 
 
 Dataflow
 
-Cloud SQL
+Cloud SQL 
+It is records based storage. (Meaning the entire record must be open on disk). 
+It's optimized to be db for transactions or writes.
 
 Pub/Sub
