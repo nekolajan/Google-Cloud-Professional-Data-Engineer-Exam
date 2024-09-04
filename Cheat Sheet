@@ -4,11 +4,12 @@ https://googlecloudcheatsheet.withgoogle.com/
 Cloud Storage
 
 BigQuery - column based storage. It's optimized to be db for reads - > reporting.
+         - serverless
 
 
-Dataproc 
+Dataproc - fully managed.
 
-Dataflow
+Dataflow - serverless
 
 Cloud SQL 
 It is records based storage. (Meaning the entire record must be open on disk). 
