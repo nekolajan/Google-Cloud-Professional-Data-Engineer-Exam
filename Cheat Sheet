@@ -32,3 +32,10 @@ Cloud Composer (Airflow)
 
 
  
+
+
+
+
+Cloud Shell 
+gcloud auth list
+list the active account name with this command
