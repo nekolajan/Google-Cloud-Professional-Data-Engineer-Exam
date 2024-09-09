@@ -7,9 +7,14 @@ BigQuery - column based storage. It's optimized to be db for reads - > reporting
          - serverless
 
 
-Dataproc - fully managed.
+Dataproc - is a fully managed service for batch processing, querying, streaming, and Machine Learning.(Hadoop workloads). 
+HDFS, the Hadoop Distributed File System, stored the data on the machines in the cluster and MapReduce provided distributed processing of the data.
+Apache Spark is an open source software project that provides a high performance analytics engine for processing batch and streaming data.
 
-Dataflow - serverless
+
+Dataflow - is a fully managed, serverless data processing service based on Apache Beam that supports both batch and streaming data processing pipelines.
+
+
 
 Cloud SQL 
 It is records based storage. (Meaning the entire record must be open on disk). 
@@ -17,6 +22,7 @@ It's optimized to be db for transactions or writes.
 
 Pub/Sub
 
+Cloud Data Fusion is a fully-managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.
 
 BI Engine is a fast, in-memory analysis service that is built directly into BigQuery.
 
@@ -29,9 +35,20 @@ Data loss prevention API
 
 Cloud Composer (Airflow)
 
+Data Catalog is a fully managed and highly scalable data discovery and metadata management service.
+
+Batch Data Pipelines
+EL = Extract and Load, used in when data is clean and correct. (Log files in Cloud Storage, Cloud Storage loads to BQ - >REST API Call). 
+ELT = Extract, Load and Transform, used when you do not know what transformations are needed. 
+ETL ? 
+
+Issues                          Solution
+Latency, throughput             Dataflow, BigTable
+Reusing Spark pipelines         Dataproc
+Need to visual build pipeline   Cloud Data Fusion
 
 
- 
+
 
 
 
